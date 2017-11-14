@@ -1,0 +1,12 @@
+<h1>Tasks#index</h1>
+
+<% @tasks.each do |task| %>
+<p>
+<%= task.name %> : <%=  task.description %>
+<%= link_to 'SHOW', task_path(task) %>
+<%= link_to 'EDIT', edit_task_path(task) %>
+<%= link_to 'DELETE', task_path(task), method: :delete  %>
+</p>
+<% end  %>
+
+<%= link_to 'Add a Task', new_task_path %>
